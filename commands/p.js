@@ -12,7 +12,7 @@ module.exports = {
         const permissions = voiceChannel.permissionsFor(message.client.user);
         if (!permissions.has('CONNECT')) return message.channel.send('Oops it seems you do not have the required permissions'); // checks if user has permission
         if (!permissions.has('SPEAK')) return message.channel.send('Oops it seems you do not have the required permissions'); // checks if user has permission
-        if (!args.length) return message.channel.send('Oh no ya forgot the second argument'); // checks if the second argument has been entered
+        if (!args.length) return message.channel.send('Write someothing like "-p sunflower"'); // checks if the second argument has been entered
 
         const validURL = (str) =>{
             var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/; // validate link
@@ -21,6 +21,10 @@ module.exports = {
             } else {
                 return true;
             }
+        }
+
+        const validPlaylistURL = (str) =>{
+            
         }
 
         if(validURL(args[0])) {
